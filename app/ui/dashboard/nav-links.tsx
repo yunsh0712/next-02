@@ -5,6 +5,7 @@ import {
   HomeIcon,
   DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx'; //clsx라이브러리 사용
 
@@ -27,7 +28,7 @@ export default function NavLinks() {
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
-          <a
+          <Link
             key={link.name}
             href={link.href}
             className={clsx(
@@ -39,7 +40,7 @@ export default function NavLinks() {
           >
             <LinkIcon className="w-6" />
             <p className="hidden md:block">{link.name}</p>
-          </a>
+          </Link>
         );
       })}
     </>
